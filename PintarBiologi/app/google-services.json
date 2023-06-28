@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "firebase_url": "https://pintar-biologi-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_number": "152102226264",
+    "project_id": "pintar-biologi",
+    "storage_bucket": "pintar-biologi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152102226264:android:1756a2841c56bda015fd2d",
+        "android_client_info": {
+          "package_name": "com.upiyptk.pintarbiologi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152102226264-empugcg23p8m2jkb8gn3hnd02cobubh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2bqRil-mhVBhOqZU0RAa-2JRpHFZuZ1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152102226264-empugcg23p8m2jkb8gn3hnd02cobubh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
