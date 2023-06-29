@@ -1,4 +1,4 @@
-package com.upiyptk.pintarbiologi
+package com.upiyptk.pintarbiologi.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.upiyptk.pintarbiologi.data.StudentRankData
+import com.upiyptk.pintarbiologi.R
 
-class AdapterStudentRank(private var list: ArrayList<DataStudentRank>): RecyclerView.Adapter<AdapterStudentRank.AdapterStudentRankViewHolder>() {
+class StudentRankAdapter(private var list: ArrayList<StudentRankData>): RecyclerView.Adapter<StudentRankAdapter.AdapterStudentRankViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
     inner class AdapterStudentRankViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val ivStudentImage: ImageView = itemView.findViewById(R.id.iv_student_image)
         val tvStudentNickname: TextView = itemView.findViewById(R.id.tv_student_nickname)
@@ -53,9 +57,19 @@ class AdapterStudentRank(private var list: ArrayList<DataStudentRank>): Recycler
             .load(studentImage)
             .into(holder.ivStudentImage)
         holder.tvStudentNickname.text = studentNickname
-        holder.tvStudentRank.text = "#${position+1}"
+        holder.tvStudentRank.text = "#${position+4}"
         holder.tvStudentResult.text = studentResult.toString()
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(list[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int = list.size - 3
+
+    fun setOnItemClickCallback(onItemClickCallbak: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallbak
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(student: StudentRankData)
+    }
 }
