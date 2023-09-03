@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Pintar Biologi</string>
+    <string name="student">Siswa</string>
     <string name="student_name">Nama</string>
+    <string name="student_nickname">Nama Panggilan</string>
+    <string name="student_classname">Kelas</string>
+    <string name="student_number">1.</string>
     <string name="student_rank">#Rank</string>
     <string name="student_result">Result</string>
+    <string name="student_rfid">RFID</string>
+    <string name="student_time">Waktu</string>
 </resources>

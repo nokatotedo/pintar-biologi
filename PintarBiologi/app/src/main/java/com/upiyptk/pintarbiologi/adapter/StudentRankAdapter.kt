@@ -10,23 +10,23 @@ import com.bumptech.glide.Glide
 import com.upiyptk.pintarbiologi.data.StudentRankData
 import com.upiyptk.pintarbiologi.R
 
-class StudentRankAdapter(private var list: ArrayList<StudentRankData>): RecyclerView.Adapter<StudentRankAdapter.AdapterStudentRankViewHolder>() {
+class StudentRankAdapter(private var list: ArrayList<StudentRankData>): RecyclerView.Adapter<StudentRankAdapter.StudentRankAdapterViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
-    inner class AdapterStudentRankViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class StudentRankAdapterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val ivStudentImage: ImageView = itemView.findViewById(R.id.iv_student_image)
         val tvStudentNickname: TextView = itemView.findViewById(R.id.tv_student_nickname)
         val tvStudentRank: TextView = itemView.findViewById(R.id.tv_student_rank)
         val tvStudentResult: TextView = itemView.findViewById(R.id.tv_student_result)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterStudentRankViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentRankAdapterViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_rank, parent, false)
-        return AdapterStudentRankViewHolder(view)
+        return StudentRankAdapterViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: AdapterStudentRankViewHolder, position: Int) {
-        list.sortWith(compareBy({ -it.result!! }, { it.number }))
+    override fun onBindViewHolder(holder: StudentRankAdapterViewHolder, position: Int) {
+        list.sortWith(compareBy({ -it.result!! }, { it.time }, { it.number }))
         val positionList = list[position+3]
 
         val studentImage = when(positionList.image) {
@@ -60,13 +60,13 @@ class StudentRankAdapter(private var list: ArrayList<StudentRankData>): Recycler
         holder.tvStudentRank.text = "#${position+4}"
         holder.tvStudentResult.text = studentResult.toString()
 
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(list[holder.adapterPosition]) }
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(list[position]) }
     }
 
     override fun getItemCount(): Int = list.size - 3
 
-    fun setOnItemClickCallback(onItemClickCallbak: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallbak
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
     }
 
     interface OnItemClickCallback {

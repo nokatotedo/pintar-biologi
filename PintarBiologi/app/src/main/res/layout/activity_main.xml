@@ -20,6 +20,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageView
+        android:id="@+id/button_student"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_student"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:id="@+id/til_student_classname"
@@ -28,7 +37,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_rank">
+        app:layout_constraintTop_toBottomOf="@id/button_student">
         <AutoCompleteTextView
             android:id="@+id/actv_student_classname"
             android:layout_width="match_parent"
@@ -39,7 +48,8 @@
             android:paddingStart="50dp"
             android:paddingEnd="150dp"
             android:textSize="11sp"
-            android:text="Semua Kelas"/>
+            android:text="Semua Kelas"
+            tools:ignore="LabelFor"/>
     </com.google.android.material.textfield.TextInputLayout>
     <LinearLayout
         android:id="@+id/ll_student_rank"

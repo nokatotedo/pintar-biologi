@@ -1,5 +1,6 @@
 package com.upiyptk.pintarbiologi.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,10 @@ import com.upiyptk.pintarbiologi.data.StudentClassnameData
 import com.upiyptk.pintarbiologi.data.StudentRankData
 
 class MainActivity: AppCompatActivity() {
+    companion object {
+        const val EXTRA_LOGIN = "extra_login"
+    }
+    private lateinit var btnStudent: ImageView
     private lateinit var actvStudentClassname: AutoCompleteTextView
     private lateinit var ivStudentImageOne: ImageView
     private lateinit var tvStudentNicknameOne: TextView
@@ -34,6 +39,7 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnStudent = findViewById(R.id.button_student)
         actvStudentClassname = findViewById(R.id.actv_student_classname)
         ivStudentImageOne = findViewById(R.id.iv_student_image_one)
         tvStudentNicknameOne = findViewById(R.id.tv_student_nickname_one)
@@ -48,6 +54,13 @@ class MainActivity: AppCompatActivity() {
         rvStudentRank = findViewById(R.id.rv_student_rank)
         rvStudentRank.layoutManager = LinearLayoutManager(this)
         rvStudentRank.setHasFixedSize(true)
+
+        btnStudent.setOnClickListener {
+            Intent(this@MainActivity, SchoolActivity::class.java).also {
+                it.putExtra(DetailsStudentActivity.EXTRA_LOGIN, intent.getIntExtra(EXTRA_LOGIN, 0))
+                startActivity(it)
+            }
+        }
 
         ref = FirebaseDatabase.getInstance().reference
         getClassname()
@@ -90,7 +103,7 @@ class MainActivity: AppCompatActivity() {
         nickname: TextView,
         result: TextView
     ) {
-        list.sortWith(compareBy({ -it.result!! }, { it.number }))
+        list.sortWith(compareBy({ -it.result!! }, { it.time }, { it.number }))
         val positionList = list[rank - 1]
 
         val studentImage = when (positionList.image) {
@@ -127,6 +140,20 @@ class MainActivity: AppCompatActivity() {
             .into(image)
         nickname.text = studentNickname
         result.text = studentResult.toString()
+
+        image.setOnClickListener {
+            getStudentDetails(StudentRankData(
+                positionList.number,
+                positionList.rfid,
+                positionList.image,
+                positionList.name,
+                positionList.nickname,
+                positionList.gender,
+                positionList.classname,
+                positionList.result,
+                positionList.time
+            ))
+        }
     }
 
     private fun getStudentRank(classname: String) {
@@ -139,7 +166,8 @@ class MainActivity: AppCompatActivity() {
                         val numberVal = resultValue!!.number
                         val rfidVal = resultValue.rfid
                         val resultVal = resultValue.result
-                        ref.child("student").orderByChild("rfid").equalTo(rfidVal)
+                        val timeVal = resultValue.time
+                        ref.child("student").orderByChild("rfid").equalTo("$rfidVal")
                             .addListenerForSingleValueEvent(object: ValueEventListener {
                                 override fun onDataChange(snapshot: DataSnapshot) {
                                     if(snapshot.exists()) {
@@ -149,17 +177,18 @@ class MainActivity: AppCompatActivity() {
                                             val imageVal = studentValue!!.image
                                             val nameVal = studentValue.name
                                             val nicknameVal = studentValue.nickname
-                                            val classnameVal = studentValue.classname
                                             val genderVal = studentValue.gender
+                                            val classnameVal = studentValue.classname
                                             val data = StudentRankData(
                                                 numberVal,
                                                 rfidVal,
                                                 imageVal,
                                                 nameVal,
                                                 nicknameVal,
-                                                classnameVal,
                                                 genderVal,
-                                                resultVal
+                                                classnameVal,
+                                                resultVal,
+                                                timeVal
                                             )
                                             if(classname == "Semua Kelas") {
                                                 arrayStudentRank.add(data)
@@ -201,11 +230,14 @@ class MainActivity: AppCompatActivity() {
                                         }
                                         if(arrayStudentRank.size > 3) {
                                             tvStudentRank.visibility = View.INVISIBLE
-                                        } else {
-                                            tvStudentRank.visibility = View.VISIBLE
                                         }
                                         val adapter = StudentRankAdapter(arrayStudentRank)
                                         rvStudentRank.adapter = adapter
+                                        adapter.setOnItemClickCallback(object: StudentRankAdapter.OnItemClickCallback {
+                                            override fun onItemClicked(student: StudentRankData) {
+                                                getStudentDetails(student)
+                                            }
+                                        })
                                     }
                                 }
 
@@ -221,5 +253,18 @@ class MainActivity: AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_LONG).show()
             }
         })
+    }
+
+    private fun getStudentDetails(student: StudentRankData) {
+        Intent(this@MainActivity, DetailsStudentActivity::class.java).also {
+            it.putExtra(DetailsStudentActivity.EXTRA_RFID, student.rfid)
+            it.putExtra(DetailsStudentActivity.EXTRA_IMAGE, student.image)
+            it.putExtra(DetailsStudentActivity.EXTRA_NAME, student.name)
+            it.putExtra(DetailsStudentActivity.EXTRA_GENDER, student.gender)
+            it.putExtra(DetailsStudentActivity.EXTRA_CLASSNAME, student.classname)
+            it.putExtra(DetailsStudentActivity.EXTRA_ACTIVITY, "0")
+            it.putExtra(DetailsStudentActivity.EXTRA_LOGIN, intent.getIntExtra(EXTRA_LOGIN, 0))
+            startActivity(it)
+        }
     }
 }

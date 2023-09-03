@@ -6,7 +6,8 @@ data class StudentRankData(
     var image: Int? = 0,
     var name: String? = "Error",
     var nickname: String? = "Error",
-    var classname: String? = "Error",
     var gender: Int? = 0,
-    var result: Int? = null
+    var classname: String? = "Error",
+    var result: Int? = null,
+    var time: Int? = null
 )

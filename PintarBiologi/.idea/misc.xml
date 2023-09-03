@@ -3,17 +3,41 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable-v24/border.xml" value="0.1675" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.129" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/bar_edit.xml" value="0.167" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/bar_search.xml" value="0.162" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/button.xml" value="0.162" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/button_add.xml" value="0.1425" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/button_back.xml" value="0.1425" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/button_login.xml" value="0.1675" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/button_student.xml" value="0.1675" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.129" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/icon_class.xml" value="0.1675" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/icon_search.xml" value="0.163" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/icon_student.xml" value="0.1675" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/drawable/outline.xml" value="0.1675" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/font/montserrat.xml" value="0.15085470085470085" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/font/roboto.xml" value="0.2189873417721519" />
-        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_details_student.xml" value="0.1" />
-        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_classname_add.xml" value="0.16" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_details_student.xml" value="0.136" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_login.xml" value="0.144" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_school.xml" value="0.1" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_student.xml" value="0.11200000000000002" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/activity_student_add.xml" value="0.136" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/fragment_class.xml" value="0.2" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/fragment_classname.xml" value="0.1" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/fragment_classname_student.xml" value="0.152" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/fragment_student.xml" value="0.16" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_class.xml" value="0.2" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_classname.xml" value="0.128" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_rank.xml" value="0.264" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_ranking.xml" value="0.264" />
-        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_result.xml" value="0.264" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_result.xml" value="0.3056664006384677" />
         <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_result_top.xml" value="0.2" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/layout/item_student.xml" value="0.16" />
+        <entry key="..\:/Users/dwiky/Documents/Project/Kotlin/Pintar Biologi/PintarBiologi/app/src/main/res/menu/menu_school.xml" value="0.128" />
       </map>
     </option>
   </component>

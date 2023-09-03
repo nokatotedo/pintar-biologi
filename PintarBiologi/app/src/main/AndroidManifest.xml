@@ -14,15 +14,26 @@
         android:theme="@style/Theme.PintarBiologi"
         tools:targetApi="31">
         <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.ClassnameAddActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.StudentAddActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.SchoolActivity"
+            android:exported="false"/>
+        <activity
             android:name=".activity.DetailsStudentActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>
